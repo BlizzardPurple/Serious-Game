@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Start Scene.unity
+    guid: b1e9e5a7b3e87d5449a13e9a9053cda3
+  - enabled: 1
+    path: Assets/Scenes/Intro Cutscene.unity
+    guid: 426104661a835a849bee12b891207142
+  - enabled: 1
+    path: Assets/Scenes/HOME.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/LAPTOP SCREEN.unity
+    guid: b789f0aa5773cd8efa2f5c4ffdf830bb
+  - enabled: 1
+    path: Assets/Scenes/End Scene.unity
+    guid: bfb1d73ab2ed23247b59332a245fca3f
+  m_configObjects: {}
