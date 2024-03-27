@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class Scene2CutsceneManger : MonoBehaviour
 {
@@ -43,7 +44,7 @@ public class Scene2CutsceneManger : MonoBehaviour
 
     IEnumerator StartCutscene()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(5f);
         Debug.Log("Cutscene");
         canvas.enabled = true;
         playerMovement.enabled = false;
@@ -52,6 +53,7 @@ public class Scene2CutsceneManger : MonoBehaviour
             cutsceneDirector.Play();
         }
         yield return new WaitForSeconds((float)cutsceneDirector.duration);
+        SceneManager.LoadScene("Market", LoadSceneMode.Single);
         playerMovement.enabled = true;
         canvas.enabled = false;
         cutsceneEnded = true;

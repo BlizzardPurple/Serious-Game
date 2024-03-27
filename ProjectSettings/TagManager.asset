@@ -12,6 +12,10 @@ TagManager:
   - Close Button Controls Hint
   - Close Remote Button
   - Checkpoint
+  - item
+  - flour
+  - apple
+  - chips
   layers:
   - Default
   - TransparentFX

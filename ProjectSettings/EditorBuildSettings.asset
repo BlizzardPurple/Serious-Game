@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/End Scene.unity
     guid: bfb1d73ab2ed23247b59332a245fca3f
+  - enabled: 1
+    path: Assets/Scenes/Market.unity
+    guid: 804ed5b7c77b03442b6e42c9d5824997
   m_configObjects: {}

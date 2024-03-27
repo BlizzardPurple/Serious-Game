@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         
-        if(Input.GetAxisRaw("Horizontal")>0.1f && !onMarket) {
+        if(Input.GetAxisRaw("Horizontal")>0.1f) {
             animator.SetBool("IsMoving",true);
             animator.SetFloat("MoveX", 1f);
             animator.SetFloat("MoveY", 0f);
@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
             if (Physics2D.OverlapCircle(targetPos, 0.1f, solidObjectsLayer) == null && Physics2D.OverlapCircle(targetPos, 0.1f, interactableLayer) == null)
                 transform.position = targetPos;
         }
-        else if(Input.GetAxisRaw("Horizontal")<-0.1f && !onMarket) {
+        else if(Input.GetAxisRaw("Horizontal")<-0.1f) {
             animator.SetBool("IsMoving",true);
             animator.SetFloat("MoveX", -1f);
             animator.SetFloat("MoveY", 0f);
@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
             if (Physics2D.OverlapCircle(targetPos, 0.1f, solidObjectsLayer) == null && Physics2D.OverlapCircle(targetPos, 0.1f, interactableLayer) == null)
                 transform.position = targetPos;
         }
-        else if(Input.GetAxisRaw("Vertical")>0.1f && !onMarket) {
+        else if(Input.GetAxisRaw("Vertical")>0.1f) {
             animator.SetBool("IsMoving",true);
             animator.SetFloat("MoveX", 0f);
             animator.SetFloat("MoveY", 1f);
@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
             if (Physics2D.OverlapCircle(targetPos, 0.1f, solidObjectsLayer) == null && Physics2D.OverlapCircle(targetPos, 0.1f, interactableLayer) == null)
                 transform.position = targetPos;
         }
-        else if(Input.GetAxisRaw("Vertical")<-0.1f && !onMarket) {
+        else if(Input.GetAxisRaw("Vertical")<-0.1f) {
             animator.SetBool("IsMoving",true);
             animator.SetFloat("MoveX", 0f);
             animator.SetFloat("MoveY", -1f);
@@ -81,9 +81,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-            if (other.CompareTag("Checkpoint")){
+            if (other.CompareTag("Checkpoint") && onMarket){
             // Add logic to save the player's progress or perform other actions
                 UIManager.Instance.ShowPhonePanel();
+                UIManager.Instance.ShowDialogPanel();
                 speedFactor = 0f;
                 Debug.Log("Player reached the checkpoint!");
                 AudioSource audioSource = GetComponent<AudioSource>();
