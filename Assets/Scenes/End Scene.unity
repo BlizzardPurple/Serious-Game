@@ -640,7 +640,12 @@ MonoBehaviour:
     Guideline 1.2.2:
     Captions (Prerecorded)
 
-    Guideline 2.1.1: Keyboard'
+    Guideline 1.2.1: Transcript
+
+    Guideline 2.4.3:
+    Focus Order
+
+    Guideline 3.2.2: On Input'
 --- !u!222 &1732881249
 CanvasRenderer:
   m_ObjectHideFlags: 0

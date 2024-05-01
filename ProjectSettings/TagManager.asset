@@ -16,6 +16,7 @@ TagManager:
   - flour
   - apple
   - chips
+  - cashier
   layers:
   - Default
   - TransparentFX

@@ -13,3 +13,7 @@ public class TimeTillScene
            return timeStamp;
        }
     }
+
+public class GuidelinesManagement{
+    public bool vmfixed = false;
+}

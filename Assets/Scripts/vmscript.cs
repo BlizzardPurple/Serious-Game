@@ -11,20 +11,25 @@ public class vmscript : MonoBehaviour
     [SerializeField] private TMPro.TextMeshProUGUI vmtext;
     [SerializeField] public GameObject DialogPanel;
     [SerializeField] public GameObject VMPanel;
+    [SerializeField] public GameObject ScrollPanel;
     [SerializeField] public TextMeshProUGUI DialogsPanelText;
     [SerializeField] public Sprite brendanSprite;
     [SerializeField] public Sprite richLadySprite;
     [SerializeField] public Image spriteImage;
+    [SerializeField] public GameObject trig;
     string brendantext = "This seems to be a focus issue, where the items are incrementing by 5 instead of 1. Let me fix this.";
     string girltext = "Thank you so much for the help!";
     private int currentItemNumber = 1; // Start with item number 1
     private bool problemfixed = false;
     private int increval = 5;
+    public GuidelinesManagement guidelinesManagement;
+    private bool sceenefinished = false;
 
     void Start()
     {
         // Set the initial text
         vmtext.text = "Selected Item: " + currentItemNumber;
+        trig.SetActive(false);
     }
 
     public void nextItem()
@@ -35,7 +40,10 @@ public class vmscript : MonoBehaviour
         // Update the text
         vmtext.text = "Selected Item: " + currentItemNumber;
 
-        DialogPanel.SetActive(false);
+        if(true){
+            DialogPanel.SetActive(false);
+        }
+        
 
         if(currentItemNumber == 11){
             if(!problemfixed){
@@ -57,7 +65,11 @@ public class vmscript : MonoBehaviour
             //VMPanel.SetActive(false);
             //await Task.Delay(2000);
             //DialogPanel.SetActive(false);
+            
+            //guidelinesManagement.vmfixed = false;
             deletePanels();
+            trig.SetActive(true);
+            sceenefinished = true;
         }
     }
 
@@ -65,10 +77,28 @@ public class vmscript : MonoBehaviour
     {
         Invoke("deleteVM", 2f); // Calls DelayedMethod after 2 seconds
         Invoke("deleteDP", 4f);
+        Invoke("ActiveSP", 2f);
+        //Invoke("DeleteSP", 4f);
+        //Invoke("Rescene", 0f);
     }
 
     void deleteDP(){
-        DialogPanel.SetActive(false);
+        if(true){
+            DialogPanel.SetActive(false);
+        }
+        
+    }
+
+    void rescene(){
+
+    }
+
+    void ActiveSP(){
+        ScrollPanel.SetActive(true);
+    }
+
+    public void DeleteSP(){
+        ScrollPanel.SetActive(false);
     }
 
     void deleteVM(){

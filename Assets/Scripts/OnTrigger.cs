@@ -25,8 +25,35 @@ public class Checkpoint : MonoBehaviour
     private bool brenDan = true;
     private int msgIndex = 1;
 
+    private bool fixVM = true;
+
 
     void Start(){
+
+          // Accessing Transform component
+        DialogPanel = GetComponent<GameObject>();
+
+        // Accessing Rigidbody component
+        VMPanel = GetComponent<GameObject>();
+
+        chipsObject=GetComponent<GameObject>();
+
+        flourObject=GetComponent<GameObject>();
+
+        appleObject=GetComponent<GameObject>();
+        // Accessing Renderer component
+        DialogsPanelText = GetComponent<TextMeshProUGUI>();
+
+        // Accessing AudioSource component
+        objectText = GetComponent<Text>();
+        
+        // Accessing custom scripts attached to the GameObject
+        brendanSprite= GetComponent<Sprite>();
+
+        richLadySprite=GetComponent<Sprite>();
+
+        spriteImage=GetComponent<Image>();
+        
         chipsObject.SetActive(false);
         appleObject.SetActive(false);
     }
@@ -55,20 +82,21 @@ public class Checkpoint : MonoBehaviour
             if(msgIndex <= 4) SetMessageText(msgIndex);
             else{
                 DialogPanel.SetActive(false);
-                VMPanel.SetActive(true);
+                if(fixVM){
+                    VMPanel.SetActive(true);
+                    fixVM = false;
+                }
             }
         }
     }
 
     private string[] messages = {
          "",
-         "Hey, this vending machine is not working, can you help?", //Home Screen,
-         "Sure, what's the problem?", //WhatsApp,
-         "I am trying to purchase Item 4. When I press the Next button, the object selector is moving from item 1 to item 6, instead of sequentially.", //To Voice assistant,
-         "Okay. Let me see how I can fix this.", //Voice Assitant Reply,
+         "Hey, this vending machine is not working, can you help?",
+         "Sure, what's the problem?",
+         "I am trying to purchase Item 4. When I press the Next button, the selector is moving from item 1 to item 6, instead of sequentially.",
+         "Okay. Let me see how I can fix this.",
          "Finally! Now I can select the item I want! Thank you so much!",
-        // "Yes, Transcript App will help provide captions for Grandma's message",
-        // "You have finished the level that corresponds to the WCAG Guideline 1.2.1. The intent of this success criterion is to make information conveyed by pre-recorded audio only and pre-recorded video only content available to all users" //Final
     };
 
     private void OnTriggerEnter2D(Collider2D other)

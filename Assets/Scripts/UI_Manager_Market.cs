@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 
     public GameObject UIPanel;
     public GameObject DialogPanel;
+    public GameObject ScrollPanel;
     //public TMP_Text grandmaMessageText;
 
     //UI Phone
@@ -35,6 +36,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] public Sprite spriteOne;
     [SerializeField] public Sprite spriteTwo;
     private bool isUsingFirstSprite = true; //first is brendan, second is ai
+    private bool end = false;
 
     private void Awake()
     {
@@ -53,10 +55,17 @@ public class UIManager : MonoBehaviour
         //PhoneHomeScreen.SetActive(true);
         //isUsingFirstSprite = true;
         //ChangeSprite();
+        if(end){
+            DialogPanel.SetActive(false);
+            UIPanel.SetActive(false);
+            ScrollPanel.SetActive(true);
+            return;
+        }
         PhoneHomeScreen.gameObject.SetActive(true);
         TranscriptApp.gameObject.SetActive(false);
         AssisstantApp.gameObject.SetActive(false);
         WhatsappApp.gameObject.SetActive(false);
+
         // SetMessageText(1);
     }
 
@@ -75,6 +84,7 @@ public class UIManager : MonoBehaviour
         AssisstantApp.gameObject.SetActive(false);
         WhatsappApp.gameObject.SetActive(false);
         SetMessageText(5);
+        end = true;
     }
 
     public void ShowAssisstant(){
