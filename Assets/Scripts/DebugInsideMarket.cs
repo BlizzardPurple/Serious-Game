@@ -6,6 +6,7 @@ public class Debugger : MonoBehaviour
 {
     [SerializeField] public GameObject DialogPanel;
     [SerializeField] public GameObject upiPanel;
+    [SerializeField] public GameObject chips_cashier;
     [SerializeField] public TextMeshProUGUI DialogsPanelText;
     [SerializeField] public Sprite brendanSprite;
     [SerializeField] public Sprite cashierSprite;
@@ -29,7 +30,7 @@ public class Debugger : MonoBehaviour
 
      void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && mi<7)
         {
             if(brenDan){
                 spriteImage.sprite = brendanSprite;
@@ -41,7 +42,7 @@ public class Debugger : MonoBehaviour
             }
             mi++;
             //SetMessageText(mi);
-            //Debug.Log(mi);
+            Debug.Log(mi);
 
             if(mi <= 5) {
                 SetMessageText(mi);

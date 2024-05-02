@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour
          "",
          "Oh! That's something new. Grandma's sent me a message! I should check it", //Home Screen,
          "The car is honking too much, I can't hear anything, maybe the assisstant will help", //WhatsApp,
-         "I can't hear the recording my grandma just sent me. Can you help", //To Voice assistant,
+         "I can't hear the recording my grandma just sent me. Can you help? [PRESS SPACE]", //To Voice assistant,
          "There exists a feature on your mobile which provides transcipts to all pre-recorded voice notes.", //Voice Assitant Reply,
          "Finally! Now I can view grandma's message, it's an updated grocery list",
          "Yes, Transcript App will help provide captions for Grandma's message",

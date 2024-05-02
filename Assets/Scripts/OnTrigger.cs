@@ -31,12 +31,12 @@ public class Checkpoint : MonoBehaviour
     void Start(){
 
           // Accessing Transform component
-        DialogPanel = GetComponent<GameObject>();
+        //DialogPanel = GetComponent<GameObject>();
 
         // Accessing Rigidbody component
-        VMPanel = GetComponent<GameObject>();
+        //VMPanel = GetComponent<GameObject>();
 
-        chipsObject=GetComponent<GameObject>();
+       /* chipsObject=GetComponent<GameObject>();
 
         flourObject=GetComponent<GameObject>();
 
@@ -52,7 +52,7 @@ public class Checkpoint : MonoBehaviour
 
         richLadySprite=GetComponent<Sprite>();
 
-        spriteImage=GetComponent<Image>();
+        spriteImage=GetComponent<Image>();*/
         
         chipsObject.SetActive(false);
         appleObject.SetActive(false);
