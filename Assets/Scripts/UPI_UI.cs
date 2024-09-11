@@ -31,6 +31,27 @@ public class UPI_UI : MonoBehaviour
     [SerializeField] public TextMeshProUGUI upi_pin;
     [SerializeField] public TextMeshProUGUI wrongupi3;
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha0) ||
+            Input.GetKeyDown(KeyCode.Alpha1) ||
+            Input.GetKeyDown(KeyCode.Alpha2) ||
+            Input.GetKeyDown(KeyCode.Alpha3) ||
+            Input.GetKeyDown(KeyCode.Alpha4) ||
+            Input.GetKeyDown(KeyCode.Alpha5) ||
+            Input.GetKeyDown(KeyCode.Alpha6) ||
+            Input.GetKeyDown(KeyCode.Alpha7) ||
+            Input.GetKeyDown(KeyCode.Alpha8) ||
+            Input.GetKeyDown(KeyCode.Alpha9))
+        {
+            if (StaticVariables_Inside_Market.isPhoneOpen)
+            {
+                Debug.Log("isPhoneOpen is true and num increased");
+                inc();
+            }
+            
+        }
+    }
 
     public void inc(){
         curr_digits = (curr_digits + 1);
@@ -60,7 +81,14 @@ public class UPI_UI : MonoBehaviour
 
     public void reportbug(){
         DialogsPanelText.text = dialog[2];
+        Invoke("f", 2f);
+    }
+     
+    private void f()
+    {
         ScrollPanel.SetActive(true);
         UPIPanel.SetActive(false);
+        DialogPanel.SetActive(false);
     }
+
 }

@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     public Image AssisstantApp;
     private bool inAssisstant = false;
     private bool assisstantSpoken = false;
+    private bool isMuted = false;
 
     //dialog
     [SerializeField] public TextMeshProUGUI DialogsPanelText;
@@ -133,6 +134,23 @@ public class UIManager : MonoBehaviour
                 ChangeSprite();
                 SetMessageText(6);
                 assisstantSpoken = false;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        //if(false)
+        {
+            
+            isMuted = !isMuted;
+            if (isMuted)
+            {
+                AudioListener.volume = 0;
+                Debug.Log("M key pressed, muted now");
+            }
+            else
+            {
+                AudioListener.volume = 100;
+                Debug.Log("M key pressed, not muted anymore");
             }
         }
     }

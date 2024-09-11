@@ -52,6 +52,8 @@ public class Debugger : MonoBehaviour
                 if(!upiOpen){
                     upiPanel.SetActive(true);
                     upiOpen = true;
+                    StaticVariables_Inside_Market.isPhoneOpen = true;
+                    Debug.Log("Should it happen?");
                 }
             }
         }

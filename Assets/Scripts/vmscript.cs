@@ -25,6 +25,18 @@ public class vmscript : MonoBehaviour
     public GuidelinesManagement guidelinesManagement;
     private bool sceenefinished = false;
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if (StaticVariables_Inside_Market.isVMPanelOpen == true)
+            {
+                //if (Input.GetKeyDown(KeyCode.Space)) return;
+                nextItem();
+            }
+        }
+    }
+
     void Start()
     {
         // Set the initial text
@@ -42,11 +54,14 @@ public class vmscript : MonoBehaviour
 
         if(true){
             DialogPanel.SetActive(false);
+            Debug.Log("to see if this calls between fixing the problem" + currentItemNumber);
+            
         }
         
 
         if(currentItemNumber == 11){
             if(!problemfixed){
+                Debug.Log("We are showing Dialog");
                 DialogPanel.SetActive(true);
                 DialogsPanelText.text = brendantext;
                 spriteImage.sprite = brendanSprite;
@@ -103,5 +118,6 @@ public class vmscript : MonoBehaviour
 
     void deleteVM(){
         VMPanel.SetActive(false);
+        StaticVariables_Inside_Market.isVMPanelOpen = false;
     }
 }

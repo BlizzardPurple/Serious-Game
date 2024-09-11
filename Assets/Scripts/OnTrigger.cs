@@ -84,6 +84,7 @@ public class Checkpoint : MonoBehaviour
                 DialogPanel.SetActive(false);
                 if(fixVM){
                     VMPanel.SetActive(true);
+                    StaticVariables_Inside_Market.isVMPanelOpen = true;
                     fixVM = false;
                 }
             }
